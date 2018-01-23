@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Waffles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @waffles.each do |waffle| %>
+      <tr>
+        <td><%= waffle.body %></td>
+        <td><%= link_to 'Show', waffle %></td>
+        <td><%= link_to 'Edit', edit_waffle_path(waffle) %></td>
+        <td><%= link_to 'Destroy', waffle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Waffle', new_waffle_path %>
